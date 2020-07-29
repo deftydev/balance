@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+
+
+{% load static %}
+
+{% block content %}
+
+
+<a href="{% url 'paymentt' %}"><button class="btn btn-success"> Collect Payment</button></a>
+<a href="{% url 'spendingg' %}"><button class="btn btn-success"> Spend/Purchase</button></a>
+<a href="{% url 'create' %}"><button class="btn btn-success"> Do Transaction</button></a>
+{% for product in employees.all %}
+<div class="jumbotron">
+  <div class="container">
+
+<div class="row">
+
+    <strong><strong/><br/>
+        Payment made_by={{product.user}}<br/>
+        Payment made to={{product.name}}<br/>
+        Quantity-:{{product.quantity}}<br/>
+        Description-:{{product.description}}<br/>
+      <i>Amount-:{{product.amount}}<i/><br/>
+
+    </div>
+</div>
+</div>
+
+</div>
+{% endfor %}
+
+{% endblock%}
